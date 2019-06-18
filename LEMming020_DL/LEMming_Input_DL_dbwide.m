@@ -1,5 +1,5 @@
 % LEMming - a MATLAB-based landscape evolution model
-% Copyright (C) 2012-2015 Dylan Ward
+% Copyright (C) 2011-2019 Dylan Ward
 % 
 % 
 % Developer can be contacted at dylan.ward@uc.edu
