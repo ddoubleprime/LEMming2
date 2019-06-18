@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# runlem - a BASH script to invoke a LEMming model run and 
+# remember to chmod u+rx scriptname if you want it directly executable
+
+# Request disk space on compute nodes
+#PBS -l file=150gb
+
+# Copy needed files to temp directory
+
+cd ~/CliffModel
+cp LEMming015_silent.m $TMPDIR/
+cp RF_Spread_lemLink.m $TMPDIR/
+cp LEMming_Input_Cliff.m $TMPDIR/
+
+# Move to the temporary directory and run job
+cd $TMPDIR
+
+# Run the script
+nohup matlab -nodesktop -nosplash -r LEMming_Input_Cliff
+
+# Copy output back to home dir before exiting (TMPDIR will be automatically removed when this script exits)
+cp $TMPDIR/RUNS/* $HOME/RUNS/Cliff/
+ 
+
+
+
+
+
+# end of runlem
